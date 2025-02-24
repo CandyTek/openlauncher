@@ -70,8 +70,12 @@ public class AppDrawerPage extends ViewPager {
     }
 
     private void setLandscapeValue() {
-        _columnCellCount = Setup.appSettings().getDrawerRowCount();
-        _rowCellCount = Setup.appSettings().getDrawerColumnCount();
+        // 去掉横屏或竖屏的适配，反正都是在TV上的，避免歧义
+        _columnCellCount = Setup.appSettings().getDrawerColumnCount();
+        _rowCellCount = Setup.appSettings().getDrawerRowCount();
+
+        // _columnCellCount = Setup.appSettings().getDrawerRowCount();
+        // _rowCellCount = Setup.appSettings().getDrawerColumnCount();
     }
 
     private void calculatePage() {

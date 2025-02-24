@@ -39,35 +39,15 @@
     <string name="pref_title__desktop">سطح المكتب</string>
     <string name="pref_title__dock">شريط التطبيقات</string>
     <string name="pref_title__app_drawer">درج التطبيقات</string>
-    <string name="pref_title__gestures">الإيماءات</string>
-    <string name="pref_title__icons">أيقونات</string>
+	<string name="pref_title__icons">أيقونات</string>
     <string name="pref_title__advanced">متنوعة</string>
 
     <string name="pref_title__size">الحجم</string>
     <string name="pref_title__appearance">المظهر</string>
     <string name="pref_title__color">الألوان</string>
 
-    <string name="pref_title__search_bar_enable">شريط البحث</string>
-    <string name="pref_summary__search_bar_enable">إظهار شريط البحث أعلى سطح المكتب</string>
-    <string name="pref_title__desktop_fullscreen">ملء الشاشة</string>
-    <string name="pref_summary__desktop_fullscreen">تفعيل وضع ملء الشاشة لسطح المكتب</string>
-    <string name="pref_title__desktop_show_position_indicator">مؤشر المكان</string>
-    <string name="pref_summary__desktop_show_position_indicator">عرض مؤشر الصفحة أسفل سطح المكتب</string>
-    <string name="pref_title__desktop_show_label">إظهار التصنيفات</string>
-    <string name="pref_summary__desktop_show_label">التطبيقات والمجلدات المسماة</string>
-    <string name="pref_title__desktop_background_color">الخلفية</string>
-    <string name="pref_title__desktop_folder_color">مجلد</string>
-
-    <string name="pref_title__dock_show_label">إظهار التصنيفات</string>
-    <string name="pref_summary__dock_show_label">التطبيقات والمجلدات المسماة</string>
-    <string name="pref_title__dock_background_color">الخلفية</string>
-
-    <string name="pref_title__drawer_style">التصميم</string>
-    <string name="pref_summary__drawer_style">الاختيار بين درج التطبيق المقسم إلى صفحات وبين المقسم إلى أعمدة.</string>
-    <string name="pref_title__hide_apps">إخفاء التطبيقات</string>
-    <string name="pref_title__drawer_show_card_view">عرض البطاقة</string>
-    <string name="pref_summary__drawer_show_card_view">إظهار طريقة عرض البطاقة أعلى درج التطبيقات .</string>
-    <string name="pref_title__drawer_remember_position">تذكر آخر صفحة</string>
+	<string name="pref_title__hide_apps">إخفاء التطبيقات</string>
+	<string name="pref_title__drawer_remember_position">تذكر آخر صفحة</string>
     <string name="pref_summary__drawer_remember_position">احتفظ بمكان الصفحة الحالية في درج التطبيقات</string>
     <string name="pref_title__drawer_show_position_indicator">مؤشر المكان</string>
     <string name="pref_summary__drawer_show_position_indicator">عرض مؤشر الصفحة أو شريط التمرير حسب النمط.</string>
@@ -97,10 +77,7 @@
 
     <!-- Preference Keys -->
     <string name="pref_title__interfaces">الواجهات</string>
-    <string name="pref_title__inputs">المدخلات</string>
-    <string name="pref_title__feels">الشعور</string>
-    <string name="pref_title__others">أخرى</string>
-    <string name="vertical_scroll_drawer">أفقي (متعدد الصفحات)</string>
+	<string name="vertical_scroll_drawer">أفقي (متعدد الصفحات)</string>
     <string name="horizontal_paged_drawer">رأسي</string>
 
 
@@ -161,7 +138,8 @@
     <!-- Item Labels -->
 
     <string name="default_folder">غير مسمى</string>
+	<string name="pref_title__search_bar_force_browser">如果没有使用占位符，搜索查询将被追加到 URI 的末尾。</string>
 
-    <!-- Dialogs -->
+	<!-- Dialogs -->
 
 </resources>

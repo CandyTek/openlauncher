@@ -122,7 +122,9 @@ public final class HomeActivity extends Activity implements OnDesktopEditListene
         _shortcutIntentFilter.addAction("com.android.launcher.action.INSTALL_SHORTCUT");
     }
 
+    @Nullable
     public final DrawerLayout getDrawerLayout() {
+        // return null;
         return findViewById(R.id.drawer_layout);
     }
 
@@ -200,6 +202,8 @@ public final class HomeActivity extends Activity implements OnDesktopEditListene
         }
 
         init();
+        
+        
     }
 
     private void init() {
@@ -217,6 +221,8 @@ public final class HomeActivity extends Activity implements OnDesktopEditListene
         initAppManager();
         initSettings();
         initViews();
+
+
     }
 
     protected void initAppManager() {
@@ -313,8 +319,10 @@ public final class HomeActivity extends Activity implements OnDesktopEditListene
         getNavigationView().setBackgroundColor(appSettings.getDesktopInsetColor());
 
         // lock the minibar
-        getDrawerLayout().setDrawerLockMode(appSettings.getMinibarEnable() ? DrawerLayout.LOCK_MODE_UNLOCKED : DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
-    }
+		if (getDrawerLayout() != null) {
+			getDrawerLayout().setDrawerLockMode(appSettings.getMinibarEnable() ? DrawerLayout.LOCK_MODE_UNLOCKED : DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
+		}
+	}
 
     private void registerBroadcastReceiver() {
         _appUpdateReceiver = new AppUpdateReceiver();
@@ -560,6 +568,8 @@ public final class HomeActivity extends Activity implements OnDesktopEditListene
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         }
         handleLauncherResume();
+        // HomeActivity._launcher.openAppDrawer();
+        // HomeActivity._launcher.openOptionsMenu();
     }
 
     @Override
@@ -584,8 +594,10 @@ public final class HomeActivity extends Activity implements OnDesktopEditListene
             // close app option menu
             getItemOptionView().collapse();
             // close minibar
-            getDrawerLayout().closeDrawers();
-            if (getDesktop().getInEditMode()) {
+			if (getDrawerLayout() != null) {
+				getDrawerLayout().closeDrawers();
+			}
+			if (getDesktop().getInEditMode()) {
                 // exit desktop edit mode
                 getDesktop().getCurrentPage().performClick();
             } else if (getAppDrawerController().getDrawer().getVisibility() == View.VISIBLE) {

@@ -30,11 +30,11 @@ public class AppSettings extends SharedPreferencesPropertyBackend {
     }
 
     public int getDesktopColumnCount() {
-        return getInt(R.string.pref_key__desktop_columns, 5);
+        return getInt(R.string.pref_key__desktop_columns, 9);
     }
 
     public int getDesktopRowCount() {
-        return getInt(R.string.pref_key__desktop_rows, 6);
+        return getInt(R.string.pref_key__desktop_rows, 5);
     }
 
     public int getDesktopIndicatorMode() {
@@ -63,11 +63,11 @@ public class AppSettings extends SharedPreferencesPropertyBackend {
     }
 
     public boolean getDesktopFullscreen() {
-        return getBool(R.string.pref_key__desktop_fullscreen, false);
+        return getBool(R.string.pref_key__desktop_fullscreen, true);
     }
 
     public boolean getDesktopShowIndicator() {
-        return getBool(R.string.pref_key__desktop_show_position_indicator, true);
+        return getBool(R.string.pref_key__desktop_show_position_indicator, false);
     }
 
     public boolean getDesktopShowLabel() {
@@ -75,7 +75,7 @@ public class AppSettings extends SharedPreferencesPropertyBackend {
     }
 
     public boolean getSearchBarEnable() {
-        return getBool(R.string.pref_key__search_bar_enable, true);
+        return getBool(R.string.pref_key__search_bar_enable, false);
     }
 
     public boolean getSearchBarStartsWith() {
@@ -134,7 +134,7 @@ public class AppSettings extends SharedPreferencesPropertyBackend {
     }
 
     public int getDockColumnCount() {
-        return getInt(R.string.pref_key__dock_columns, 5);
+        return getInt(R.string.pref_key__dock_columns, 9);
     }
 
     public int getDockRowCount() {
@@ -154,7 +154,7 @@ public class AppSettings extends SharedPreferencesPropertyBackend {
     }
 
     public int getDrawerColumnCount() {
-        return getInt(R.string.pref_key__drawer_columns, 5);
+        return getInt(R.string.pref_key__drawer_columns, 9);
     }
 
     public int getDrawerRowCount() {
@@ -166,7 +166,7 @@ public class AppSettings extends SharedPreferencesPropertyBackend {
     }
 
     public boolean getDrawerShowCardView() {
-        return getBool(R.string.pref_key__drawer_show_card_view, true);
+        return getBool(R.string.pref_key__drawer_show_card_view, false);
     }
 
     public boolean getDrawerRememberPosition() {
@@ -182,15 +182,16 @@ public class AppSettings extends SharedPreferencesPropertyBackend {
     }
 
     public int getDrawerBackgroundColor() {
-        return getInt(R.string.pref_key__drawer_background_color, rcolor(R.color.shade));
+        return getInt(R.string.pref_key__drawer_background_color, rcolor(R.color.white));
     }
 
     public int getDrawerCardColor() {
-        return getInt(R.string.pref_key__drawer_card_color, rcolor(R.color.shade));
+        return getInt(R.string.pref_key__drawer_card_color, rcolor(R.color.white));
     }
 
     public int getDrawerLabelColor() {
-        return getInt(R.string.pref_key__drawer_label_color, Color.WHITE);
+        // return getInt(R.string.pref_key__drawer_label_color, Color.WHITE);
+        return getInt(R.string.pref_key__drawer_label_color, Color.BLACK);
     }
 
     public int getDrawerFastScrollColor() {
@@ -242,7 +243,7 @@ public class AppSettings extends SharedPreferencesPropertyBackend {
     }
 
     public String getTheme() {
-        return getString(R.string.pref_key__theme, "1");
+        return getString(R.string.pref_key__theme, "0");
     }
 
     public int getPrimaryColor() {
@@ -250,7 +251,7 @@ public class AppSettings extends SharedPreferencesPropertyBackend {
     }
 
     public int getIconSize() {
-        return getInt(R.string.pref_key__icon_size, 52);
+        return getInt(R.string.pref_key__icon_size, 56);
     }
 
     public String getIconPack() {

@@ -23,7 +23,7 @@
     <com.benny.openlauncher.widget.ColorPreferenceCategory android:title="@string/pref_title__icons">
 
         <SeekBarPreference
-            android:defaultValue="52"
+            android:defaultValue="56"
             android:key="@string/pref_key__icon_size"
             android:max="120"
             android:summary="@string/pref_summary__icon_size"

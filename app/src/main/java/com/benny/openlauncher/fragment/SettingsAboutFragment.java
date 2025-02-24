@@ -92,13 +92,13 @@ public class SettingsAboutFragment extends GsPreferenceFragmentCompat<AppSetting
                     return true;
                 }
                 case R.string.pref_key__more_info__project_license: {
-                    try {
-                        au.showDialogWithHtmlTextView(R.string.licenses, new SimpleMarkdownParser().parse(
-                                getResources().openRawResource(R.raw.license),
-                                "", SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW).getHtml());
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
+                    // try {
+                        // au.showDialogWithHtmlTextView(R.string.licenses, new SimpleMarkdownParser().parse(
+                        //         getResources().openRawResource(R.raw.license),
+                        //         "", SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW).getHtml());
+                    // } catch (IOException e) {
+                    //     e.printStackTrace();
+                    // }
                     return true;
                 }
                 case R.string.pref_key__more_info__open_source_licenses: {
@@ -112,24 +112,24 @@ public class SettingsAboutFragment extends GsPreferenceFragmentCompat<AppSetting
                     return true;
                 }
                 case R.string.pref_key__more_info__contributors_public_info: {
-                    try {
-                        au.showDialogWithHtmlTextView(R.string.contributors, new SimpleMarkdownParser().parse(
-                                getResources().openRawResource(R.raw.contributors),
-                                "", SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW).getHtml());
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
+                    // try {
+                    //     au.showDialogWithHtmlTextView(R.string.contributors, new SimpleMarkdownParser().parse(
+                    //             getResources().openRawResource(R.raw.contributors),
+                    //             "", SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW).getHtml());
+                    // } catch (IOException e) {
+                    //     e.printStackTrace();
+                    // }
                     return true;
                 }
                 case R.string.pref_key__more_info__copy_build_information: {
                     new ShareUtil(getContext()).setClipboard(preference.getSummary());
                     SimpleMarkdownParser smp = new SimpleMarkdownParser();
-                    try {
-                        String html = smp.parse(getResources().openRawResource(R.raw.changelog), "", SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW, SimpleMarkdownParser.FILTER_CHANGELOG).getHtml();
-                        au.showDialogWithHtmlTextView(R.string.changelog, html);
-                    } catch (Exception ex) {
-
-                    }
+                    // try {
+                    //     String html = smp.parse(getResources().openRawResource(R.raw.changelog), "", SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW, SimpleMarkdownParser.FILTER_CHANGELOG).getHtml();
+                    //     au.showDialogWithHtmlTextView(R.string.changelog, html);
+                    // } catch (Exception ex) {
+                    //
+                    // }
                     return true;
                 }
             }

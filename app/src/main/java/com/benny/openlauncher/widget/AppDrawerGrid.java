@@ -5,6 +5,7 @@ import android.content.res.Configuration;
 import android.graphics.Color;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -77,6 +78,7 @@ public class AppDrawerGrid extends FrameLayout {
                 getViewTreeObserver().removeOnGlobalLayoutListener(this);
                 _itemWidth = getWidth() / _layoutManager.getSpanCount();
                 _itemHeightPadding = Tool.dp2px(20);
+
                 updateAdapter(Setup.appLoader().getAllApps(getContext(), false));
                 Setup.appLoader().addUpdateListener(new AppUpdateListener() {
                     @Override
@@ -96,7 +98,7 @@ public class AppDrawerGrid extends FrameLayout {
             App app = apps.get(i);
             items.add(new IconLabelItem(app.getIcon(), app.getLabel())
                     .withIconSize(Setup.appSettings().getIconSize())
-                    .withTextColor(Color.WHITE)
+                    .withTextColor(Setup.appSettings().getDrawerLabelColor())
                     .withTextVisibility(Setup.appSettings().getDrawerShowLabel())
                     .withIconPadding(8)
                     .withTextGravity(Gravity.CENTER)
@@ -113,7 +115,7 @@ public class AppDrawerGrid extends FrameLayout {
         }
         _gridDrawerAdapter.set(items);
     }
-
+    private static final String TAG = AppDrawerGrid.class.getSimpleName();
     @Override
     protected void onConfigurationChanged(Configuration newConfig) {
         if (_apps == null || _layoutManager == null) {
@@ -130,12 +132,17 @@ public class AppDrawerGrid extends FrameLayout {
     }
 
     private void setPortraitValue() {
+        Log.e(TAG,"setPortraitValue: "+Setup.appSettings().getDrawerColumnCount());
         _layoutManager.setSpanCount(Setup.appSettings().getDrawerColumnCount());
         _gridDrawerAdapter.notifyAdapterDataSetChanged();
     }
 
     private void setLandscapeValue() {
-        _layoutManager.setSpanCount(Setup.appSettings().getDrawerRowCount());
+        // _layoutManager.setSpanCount(Setup.appSettings().getDrawerRowCount());
+        // 去掉横屏或竖屏的适配，反正都是在TV上的，避免歧义
+        Log.e(TAG,"setPortraitValue: "+Setup.appSettings().getDrawerColumnCount());
+        _layoutManager.setSpanCount(Setup.appSettings().getDrawerColumnCount());
+
         _gridDrawerAdapter.notifyAdapterDataSetChanged();
     }
 

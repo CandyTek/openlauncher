@@ -101,3 +101,4 @@ app/src/main/res/raw/license
 app-flavorDefault-debug/
 
 .directory
+/app/flavorDefault/release

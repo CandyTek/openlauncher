@@ -8,14 +8,14 @@
     <com.benny.openlauncher.widget.ColorPreferenceCategory android:title="@string/pref_title__size">
 
         <SeekBarPreference
-            android:defaultValue="5"
+            android:defaultValue="9"
             android:key="@string/pref_key__desktop_columns"
             android:max="20"
             android:title="@string/columns"
             app:min="2" />
 
         <SeekBarPreference
-            android:defaultValue="6"
+            android:defaultValue="5"
             android:key="@string/pref_key__desktop_rows"
             android:max="20"
             android:title="@string/rows"
@@ -57,13 +57,13 @@
             android:title="@string/pref_title__desktop_show_grid" />
 
         <CheckBoxPreference
-            android:defaultValue="false"
+            android:defaultValue="true"
             android:key="@string/pref_key__desktop_fullscreen"
             android:summary="@string/pref_summary__desktop_fullscreen"
             android:title="@string/pref_title__desktop_fullscreen" />
 
         <CheckBoxPreference
-            android:defaultValue="true"
+            android:defaultValue="false"
             android:key="@string/pref_key__desktop_show_position_indicator"
             android:summary="@string/pref_summary__desktop_show_position_indicator"
             android:title="@string/pref_title__desktop_show_position_indicator" />
@@ -111,7 +111,7 @@
     <com.benny.openlauncher.widget.ColorPreferenceCategory android:title="@string/pref_title__search_bar">
 
         <CheckBoxPreference
-            android:defaultValue="true"
+            android:defaultValue="false"
             android:key="@string/pref_key__search_bar_enable"
             android:summary="@string/pref_summary__search_bar_enable"
             android:title="@string/pref_title__search_bar_enable" />
