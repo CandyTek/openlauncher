@@ -85,7 +85,7 @@ public class AppDrawerController extends RevealFrameLayout {
 		// _swipeRefreshLayout.addView(_swipeRefreshHeader);
 		((SmartRefreshLayout) _swipeRefreshLayout).setRefreshHeader(_swipeRefreshHeader);
 		((SmartRefreshLayout) _swipeRefreshLayout).setDragRate(1);
-		// ((SmartRefreshLayout) _swipeRefreshLayout).setEnableOverScrollBounce(false);
+		((SmartRefreshLayout) _swipeRefreshLayout).setEnableOverScrollBounce(false);
 		// ((SmartRefreshLayout) _swipeRefreshLayout).setEnablePureScrollMode(true);
 		((SmartRefreshLayout) _swipeRefreshLayout).setReboundDuration(1);
 		((SmartRefreshLayout) _swipeRefreshLayout).setOnRefreshListener(new OnRefreshListener() {
@@ -164,11 +164,11 @@ public class AppDrawerController extends RevealFrameLayout {
 		LayoutInflater layoutInflater = LayoutInflater.from(getContext());
 		_drawerMode = Setup.appSettings().getDrawerStyle();
 		setVisibility(GONE);
-		setBackgroundColor(Setup.appSettings().getDrawerBackgroundColor());
 		switch (_drawerMode) {
 			case Mode.GRID:
 				_drawerViewGrid = new AppDrawerGrid(getContext());
 				_swipeRefreshLayout.addView(_drawerViewGrid); // 让 SwipeRefreshLayout 包裹 RecyclerView
+				_drawerViewGrid.setBackgroundColor(Setup.appSettings().getDrawerBackgroundColor());
 				break;
 			case Mode.PAGE:
 			default:
@@ -177,6 +177,7 @@ public class AppDrawerController extends RevealFrameLayout {
 				_drawerViewPage.withHome(indicator);
 				_swipeRefreshLayout.addView(_drawerViewPage); // 让 SwipeRefreshLayout 包裹 ViewPager
 				_swipeRefreshLayout.addView(indicator);
+				_drawerViewPage.setBackgroundColor(Setup.appSettings().getDrawerBackgroundColor());
 				break;
 		}
 
