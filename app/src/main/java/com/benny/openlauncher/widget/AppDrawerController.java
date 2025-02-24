@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.AttributeSet;
+import android.view.DragEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -83,6 +84,10 @@ public class AppDrawerController extends RevealFrameLayout {
 
 		// _swipeRefreshLayout.addView(_swipeRefreshHeader);
 		((SmartRefreshLayout) _swipeRefreshLayout).setRefreshHeader(_swipeRefreshHeader);
+		((SmartRefreshLayout) _swipeRefreshLayout).setDragRate(1);
+		// ((SmartRefreshLayout) _swipeRefreshLayout).setEnableOverScrollBounce(false);
+		// ((SmartRefreshLayout) _swipeRefreshLayout).setEnablePureScrollMode(true);
+		((SmartRefreshLayout) _swipeRefreshLayout).setReboundDuration(1);
 		((SmartRefreshLayout) _swipeRefreshLayout).setOnRefreshListener(new OnRefreshListener() {
 			@Override
 			public void onRefresh(RefreshLayout refreshlayout) {
